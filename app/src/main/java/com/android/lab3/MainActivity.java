@@ -37,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
             int numb1 = Integer.parseInt(num1.getText().toString());
             int numb2 = Integer.parseInt(num2.getText().toString());
 
-            int summ = numb1 + numb2;
+            int summ = sum(numb1, numb2);
 
             sum.setText("Sum: " + summ);
         }
     }
 
+    public int sum (int num1, int num2){
+        return num1 + num2;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -1,10 +1,13 @@
 package com.android.lab3.tests;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.lab3.MainActivity;
 import com.android.lab3.R;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by Sandra Soueid on 4/20/2016.
@@ -19,9 +22,9 @@ public class JUnit_test extends ActivityInstrumentationTestCase2<MainActivity> {
     public void test_first(){
         mainActivity = getActivity();
 
-        TextView textView = (TextView) mainActivity.findViewById(R.id.tv1);
-        String tester = textView.getText().toString();
+        int summ = mainActivity.sum(2, 5);
 
-        assertEquals("Hello World!", tester);
+        assertEquals(7, summ);
+
     }
 }
