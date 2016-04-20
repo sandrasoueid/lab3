@@ -22,7 +22,7 @@ public class JUnit_test extends ActivityInstrumentationTestCase2<MainActivity> {
     public void test_first(){
         mainActivity = getActivity();
 
-        int summ = mainActivity.sum(2, 5);
+        int summ = mainActivity.add(5, 2);
 
         assertEquals(7, summ);
 
