@@ -8,24 +8,39 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button button;
+    EditText num1;
+    EditText num2;
+    TextView sum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        button = (Button) findViewById(R.id.button);
+        num1 = (EditText) findViewById(R.id.editText);
+        num2 = (EditText) findViewById(R.id.editText2);
+        sum = (TextView) findViewById(R.id.textView);
+        button.setOnClickListener(new Sum());
+
+    }
+
+    public class Sum implements View.OnClickListener {
+        @Override
+        public void onClick(View v){
+            int numb1 = Integer.parseInt(num1.getText().toString());
+            int numb2 = Integer.parseInt(num2.getText().toString());
+
+            int summ = numb1 + numb2;
+
+            sum.setText("Sum: " + summ);
+        }
     }
 
     @Override
