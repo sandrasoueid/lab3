@@ -24,7 +24,7 @@ public class JUnit_test extends ActivityInstrumentationTestCase2<MainActivity> {
 
         int summ = mainActivity.add(5, 2);
 
-        assertEquals(7, summ);
+        assertEquals(3, summ);
 
     }
 }
